@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>EMI calculator</title>
+        <style>
+           
+         .all{
+          margin-left: 600px;
+          margin-top: 80px;
+         }
+         .head{
+            color: rgb(0, 17, 255);
+            text-align: center;
+            font-size: 50px;
+         }
+        input{
+            width: 200px;
+            padding: 9px;
+            border-radius: 3px;
+        }
+        button{
+            padding: 9px;
+            border-radius: 3px;
+        }
+        button:hover{
+            color: blue;
+        }
+        </style>
+    </head>
+    <body>
+        <h2 class="head">EMI Calculator</h2>
+        <div class="all">
+        <h2>Home loan Amount</h2>
+        <input type="number" id="a1">
+        <h2>Interest Rate</h2><br>
+        <input type="number" id="a2">
+        <h2>Loan Tenure</h2>
+        <input type="number" id="a3">
+        <button onclick="touch()" id="t1">calculate</button>
+        
+        <h2>Loan EMI</h2>
+        <P id="a"></P>
+</div>
+    </body>
+    <script>
+        function touch(){
+            let p=document.getElementById("a1").value;
+            let r=document.getElementById("a2").value;
+            let n=document.getElementById("a3").value;
+            let R=0.0129;
+            c=[p*r*(1+R)^n]/[(1+R)^n-1]
+            document.getElementById("a").innerHTML=c;
+        }
+    </script>
+</html>
